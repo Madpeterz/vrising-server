@@ -162,6 +162,7 @@ else
   cp -f ${V_RISING_SERVER_BAN_LIST_FILE} ${V_RISING_SERVER_BAN_LIST_FILE_DEFAULT}
 fi
 
+if [ ${V_RISING_SERVER_CONFIG_CREATE} != false ]; then
 ## TODO: This is a bit dumb at the moment, as it's always replacing the file,
 ##       even though it doesn't strictly need to, but same goes for the files above..
 # Setup and/or configure RCON
@@ -190,6 +191,9 @@ cp -f ${V_RISING_SERVER_CONFIG_FILE} ${V_RISING_SERVER_CONFIG_FILE_DEFAULT}
 
 echo "Applying custom game configuration file.."
 cp -f ${V_RISING_SERVER_GAME_CONFIG_FILE} ${V_RISING_SERVER_GAME_CONFIG_FILE_DEFAULT}
+else
+    echo "Skipping server and game config changes"
+fi
 
 # Start mode 1 means we only want to update
 if [ "$V_RISING_SERVER_START_MODE" = "1" ]; then
