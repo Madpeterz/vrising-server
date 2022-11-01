@@ -17,6 +17,9 @@ services:
       # V_RISING_SERVER_START_MODE: "1" # Install/update and exit
       V_RISING_SERVER_START_MODE: "2" # Install, skip update check and start server
       V_RISING_SERVER_UPDATE_MODE: "1" # Enable update checking
+      V_RISING_SERVER_CONFIG_CREATE: true
+      # Create the config file [and fill with options below]
+      # Set this to false if you have a config you wish to use
 
       # Customize the server
       V_RISING_SERVER_NAME: "V Rising Docker Test Server"
